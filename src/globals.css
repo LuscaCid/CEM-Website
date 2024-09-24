@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family:  "Open Sans", system-ui;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .on-open {
+    animation: slidein 0.16s ease-in-out ;
+  }
+  .on-open-modal {
+    animation: openModal 0.16s ease ;
+  }
+  .on-close-modal {
+    animation: onCloseModal 0.16s ease;
+  }
+}
+
+
+@keyframes openModal {
+  from {
+      opacity: 50%;
+      transform: scale(97%);
+  }
+  to {
+      opacity: 100%;
+      transform: scale(100%);
+  }
+}
+@keyframes onCloseModal {
+  from {
+      opacity: 100%;
+      transform: scale(100%);
+  }
+  to {
+      opacity: 50%;
+      transform: scale(97%);
+  }
+}
+@keyframes bells {
+  from {
+      transform: rotate(45deg);
+  }
+  to {
+  transform: rotate(70deg);
+  }
+}
