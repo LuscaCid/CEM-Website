@@ -9,15 +9,16 @@ export interface MetricsProps {
 function MetricsCard({ icon, metric, subTitle, alt } : MetricsProps){
   return (
     <div 
-      className="bg-metric-card p-4 border-none w-full rounded-sm flex flex-col items-center gap-3 min-w-[240px]">
+      className="bg-metric-card px-1 py-10 border-none w-full rounded-sm flex flex-col items-center gap-3 min-w-[240px] ">
       <img 
+        className="w-20"
         src={icon}
         alt={alt}
       />
-      <h2 className="text-2xl text-white">
+      <h2 className="text-4xl text-white">
         {metric}
       </h2>
-      <p className="text-main text-sm">
+      <p className="text-main text-lg font-thin">
         {subTitle}
       </p>
     </div>
@@ -29,6 +30,7 @@ export function Metrics () {
       {
         MetricsData.metrics.map(metric => (
           <MetricsCard
+            key={metric.subTitle}
             icon={metric.icon}
             metric={metric.metric}
             subTitle={metric.subTitle}

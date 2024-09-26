@@ -7,7 +7,7 @@ import { TextLink } from "../ui/TextButton";
 import { Button } from "../ui/Button";
 export function Header () {
     return (
-        <header className="flex justify-between fixed items-center bg-secondary w-full shadow-sm py-4 px-16">
+        <header className="flex justify-between z-50 fixed items-center bg-secondary w-full shadow-sm py-4 px-20">
             <NavLink
                 to={'/'}
             >
