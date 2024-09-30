@@ -2,14 +2,31 @@ import { NavLink } from "react-router-dom";
 import Logo from "../assets/Logo.svg"
 import { Button } from "../ui/Button";
 import ArrowRight from "../assets/Icons/Seta Direita.svg";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import Instagram from "../assets/Icons/Instagram.png";
+import Facebook from "../assets/Icons/Facebook.png";
+import Twitter from "../assets/Icons/Twitter.png";
+import { FacebookIcon, LucideInstagram, TwitterIcon, XIcon } from "lucide-react";
+const formSchema = z.object({
+    productServiceQuery : z.string().min(4, "Não foi possivel")   
+});
+type FormSchemaType = z.infer<typeof formSchema>
 export function PagesFooter (){
+    const { register, handleSubmit, formState : { isLoading } } = useForm<FormSchemaType>({
+        resolver : zodResolver(formSchema)
+    });
+    const handleSubmitForm = (values : FormSchemaType) => {
+        console.log("Formulário enviado", values);
+    }
     return (
         <footer className="w-full bg-footer px-20 py-8 self-end items-end ">
             <main className="flex gap-20">
                 <nav className="flex flex-col gap-3 w-1/3">
                     <ul className="flex flex-col text-white gap-3  ">
                         <img 
-                            className="w-2/3"
+                            className="w-2/3 max-w-[200px]"
                             src={Logo}
                             alt="Logo da corporação."
                         />  
@@ -17,8 +34,9 @@ export function PagesFooter (){
                         <li><NavLink to={"/sctructureEvents"}>Estrutura e eventos</NavLink></li>
                         <li><NavLink to={"/blog"}>Blog</NavLink></li>
                     </ul>
-                    <form 
-                        className="flex gap-2"
+                    <form
+                        onSubmit={handleSubmit(handleSubmitForm)} 
+                        className="flex gap-2 max-w-[350px]"
                     >
                         <input 
                             placeholder="Procurar empresas/serviços"
@@ -32,7 +50,7 @@ export function PagesFooter (){
                     </form>
                 </nav>
                
-                <aside className="flex gap-20 text-white">
+                <aside className="flex gap-20 justify-between items-start  text-white">
                     <ul className="flex flex-col gap-6">
                         <legend className="text-lg">
                             Horários
@@ -69,6 +87,23 @@ export function PagesFooter (){
                             <li>Tel.: (21) 2543-3881</li>
                             <li className="font-bold underline">cempresarial@mourisco.com</li>
                         </ul>
+                    </ul>
+                    <ul className="flex flex-col gap-3">
+                        <li className="flex items-center gap-5 ">
+                            <div className=" rounded-full p-1.5 flex items-center justify-center  bg-main text-zinc-100">
+                                <FacebookIcon />
+                            </div> facebook
+                        </li>
+                        <li className="flex items-center gap-5 ">
+                            <div className=" rounded-full p-1.5 flex items-center justify-center  bg-main text-zinc-100">
+                                <LucideInstagram />
+                            </div> Instagram
+                        </li>
+                        <li className="flex items-center gap-5 ">
+                            <div className=" rounded-full p-1.5 flex items-center justify-center  bg-main text-zinc-100">
+                                <XIcon />
+                            </div> Twitter
+                        </li>
                     </ul>
                 </aside>
             </main>

@@ -2,7 +2,7 @@ import Chrevron from "../assets/Icons/Vector.png"
 import React, { ForwardedRef, forwardRef, MutableRefObject, useCallback, useEffect, useRef, useState } from "react"
 
 export const TopPageRedirectButton = (() => {
-  const [btnIsVisible, setBtnIsVisible] = useState(true);
+  const [btnIsVisible, setBtnIsVisible] = useState(false);
 
   const handleNavigateToTopPage = useCallback(() => {
     window.scrollTo({
@@ -19,6 +19,7 @@ export const TopPageRedirectButton = (() => {
     setBtnIsVisible(true);
   }
   useEffect(() => {
+    handleScroll();
     window.addEventListener("scroll" ,handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   } ,[ window.scrollY]);

@@ -14,7 +14,6 @@ import BloodDonation from "../assets/PlacesList/image 1.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { TestimonyCard } from "../components/TestimonyCard";
 export default function Home() {
-  const pageRefference = useRef<HTMLDivElement|null>(null);
   const {data : notices, isLoading, isSuccess} = useQuery({
     queryFn : async () => {
       //call for api to return data fr
@@ -26,7 +25,6 @@ export default function Home() {
   });
   return (
     <div 
-      ref={pageRefference} 
       className="w-full"
     >
       {/* secao de imgns da home page */}
@@ -71,7 +69,6 @@ export default function Home() {
       <Section className="py-2 " >
         <Metrics />
       </Section>  
-      <TopPageRedirectButton />
       <Section 
         isBlue
         title="Titlo para estrtura e eventos"
@@ -119,12 +116,16 @@ export default function Home() {
             ))
           }
           </div>
-        
-          <section>
-
-          </section>
+      
         </main>
+        
       </Section>
+      <iframe 
+      className="w-full" 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.9928662272396!2d-43.18326282581381!3d-22.95048983943219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997ff0e299ea4b%3A0x24628b9194358b87!2sCentro%20Empresarial%20Mourisco!5e0!3m2!1spt-BR!2sbr!4v1727574147438!5m2!1spt-BR!2sbr" width="800" height="600" 
+      loading="lazy">
+        
+      </iframe>
     </div>
   );
 }

@@ -6,7 +6,7 @@ interface CompanyCardProps {
 export function CompanyCard (props : CompanyCardProps) {
   return (
     <div className="flex items-center justify-center gap-3 flex-col">
-      <img src={props.img} className="rounded-full " />
+      <img src={props.img} className="rounded-full w-1/2 object-cover" />
       <h3 className="text-lg font-normal">{props.title}</h3>
       <p className="text-md ">{props.subTitle}</p>
     </div>
