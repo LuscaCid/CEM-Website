@@ -93,6 +93,7 @@ export default function Home() {
               key={element}
               description="lorem Ips incorrectly "
               headerParagraph="lorem Ips incorrectly"
+              //obtencao da imagem na pasta onde vai conter a informacao (static files) e insercao no frontend,m
               img={BloodDonation}
               slug="Campanhas"
               title="Titulo da campanha"

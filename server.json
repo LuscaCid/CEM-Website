@@ -1,0 +1,75 @@
+{
+  "blog_posts" :[
+    {
+      "img": "https://example.com/image1.jpg",
+      "slug": "sonic-1",
+      "headerParagraph": "Este é o primeiro exemplo.",
+      "title": "Título do Exemplo 1",
+      "description": "Descrição detalhada do exemplo 1."
+    },
+    {
+      "img": "https://example.com/image2.jpg",
+      "slug": "exemplo-2",
+      "headerParagraph": "Este é o segundo exemplo.",
+      "title": "Título do Exemplo 2",
+      "description": "Descrição detalhada do exemplo 2."
+    },
+    {
+      "img": "https://example.com/image3.jpg",
+      "slug": "exemplo-3",
+      "headerParagraph": "Este é o terceiro exemplo.",
+      "title": "Título do Exemplo 3",
+      "description": "Descrição detalhada do exemplo 3."
+    },
+    {
+      "img": "https://example.com/image4.jpg",
+      "slug": "exemplo-4",
+      "headerParagraph": "Este é o quarto exemplo.",
+      "title": "Título do Exemplo 4",
+      "description": "Descrição detalhada do exemplo 4."
+    },
+    {
+      "img": "https://example.com/image5.jpg",
+      "slug": "exemplo-5",
+      "headerParagraph": "Este é o quinto exemplo.",
+      "title": "Título do Exemplo 5",
+      "description": "Descrição detalhada do exemplo 5."
+    },
+    {
+      "img": "https://example.com/image6.jpg",
+      "slug": "exemplo-6",
+      "headerParagraph": "Este é o sexto exemplo.",
+      "title": "Título do Exemplo 6",
+      "description": "Descrição detalhada do exemplo 6."
+    },
+    {
+      "img": "https://example.com/image7.jpg",
+      "slug": "exemplo-7",
+      "headerParagraph": "Este é o sétimo exemplo.",
+      "title": "Título do Exemplo 7",
+      "description": "Descrição detalhada do exemplo 7."
+    },
+    {
+      "img": "https://example.com/image8.jpg",
+      "slug": "exemplo-8",
+      "headerParagraph": "Este é o oitavo exemplo.",
+      "title": "Título do Exemplo 8",
+      "description": "Descrição detalhada do exemplo 8."
+    },
+    {
+      "img": "https://example.com/image9.jpg",
+      "slug": "exemplo-9",
+      "headerParagraph": "Este é o nono exemplo.",
+      "title": "Título do Exemplo 9",
+      "description": "Descrição detalhada do exemplo 9."
+    },
+    {
+      "img": "https://example.com/image10.jpg",
+      "slug": "exemplo-10",
+      "headerParagraph": "Este é o décimo exemplo.",
+      "title": "Título do Exemplo 10",
+      "description": "Descrição detalhada do exemplo 10."
+    }
+  ]
+  
+}
