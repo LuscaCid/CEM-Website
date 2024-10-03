@@ -34,7 +34,7 @@ export function Blog() {
         <Button title="Leia mais"/> 
       </header>
       <Section className="flex gap-6 items-start">
-        <main className="w-[60%] grid grid-cols-2 gap-6">
+        <main className="w-[65%] grid grid-cols-2 gap-6">
           {
             response && response.data.length > 0 && response.data.map((post) => (
               <NoticeCard 
