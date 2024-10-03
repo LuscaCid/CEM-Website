@@ -1,109 +1,39 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { AccordionsSectionWithImage } from "./AccordionsSectionWithImage";
 import { CirclePlus } from "lucide-react";
-import Elevadores from "../assets/AccordionsImages/Elevadores 1.png";
-
-export function AccordionsSection ({}){
+interface Props {
+  img : string;
+  title : string;
+  subTitle : string;
+  //informacao para os filhos, no caso os accordions que estarao na secao
+  accordionDetails : {title : string, description : string}[]
+  reverseImagePosition? : boolean;
+}
+export function AccordionsSection ({  accordionDetails, img, subTitle, title, reverseImagePosition } : Props){
   return (
-    <section>
-       <div>
-        <AccordionsSectionWithImage 
-          img={Elevadores} 
-          title="Frase sobre Tecnologia" 
-          subtitle="lorem ipsun aaaaa"
-        >
-        <Accordion className="shadow-none" sx={{
-          paddingY : "1rem",
+    <AccordionsSectionWithImage 
+      img={img} 
+      title={title} 
+      subtitle={subTitle}
+      reverse={reverseImagePosition} 
+    >
+    {
+      accordionDetails.map((accordion, index) => (
+        <Accordion key={index.toString()} sx={{
+          paddingY : "0.6rem",
           paddingX : "0rem",
           borderRadius: "none",
           boxShadow : "none;", 
-          borderBottom: "2px solid black;"
           }}>
-          <AccordionSummary 
-            className="shadow-none"
-            expandIcon = {<CirclePlus />}
-            id="tecnologia-accordion"
-          >
-              Titulacao
-            </AccordionSummary>
-            <AccordionDetails>
-              aaaaaaa
-            </AccordionDetails>
-          </Accordion>
-          <Accordion className="shadow-none" sx={{
-              paddingY : "1rem",
-              paddingX : "0rem",
-              borderRadius: "none",
-              boxShadow : "none;", 
-              borderBottom: "2px solid black;"
-            }}>
-            <AccordionSummary 
-              className="shadow-none"
-              expandIcon = {<CirclePlus />}
-              id="tecnologia-accordion"
-            >
-              Titulacao
-            </AccordionSummary>
-            <AccordionDetails>
-              aaaaaaa
-            </AccordionDetails>
-          </Accordion>
-          <Accordion className="shadow-none" sx={{
-              paddingY : "1rem",
-              paddingX : "0rem",
-              borderRadius: "none",
-              boxShadow : "none;", 
-              borderBottom: "2px solid black;"
-            }}>
-            <AccordionSummary 
-              className="shadow-none"
-              expandIcon = {<CirclePlus />}
-              id="tecnologia-accordion"
-            >
-              Titulacao
-            </AccordionSummary>
-            <AccordionDetails>
-              aaaaaaa
-            </AccordionDetails>
-          </Accordion>
-          <Accordion className="shadow-none" sx={{
-              paddingY : "1rem",
-              paddingX : "0rem",
-              borderRadius: "none",
-              boxShadow : "none;", 
-              borderBottom: "2px solid black;"
-            }}>
-            <AccordionSummary 
-              className="shadow-none"
-              expandIcon = {<CirclePlus />}
-              id="tecnologia-accordion"
-            >
-              Titulacao
-            </AccordionSummary>
-            <AccordionDetails>
-              aaaaaaa
-            </AccordionDetails>
-          </Accordion>
-          <Accordion className="shadow-none" sx={{
-              paddingY : "1rem",
-              paddingX : "0rem",
-              borderRadius: "none",
-              boxShadow : "none;", 
-            }}>
-            <AccordionSummary 
-              className="shadow-none"
-              expandIcon = {<CirclePlus />}
-              id="tecnologia-accordion"
-            >
-              Titulacao
-            </AccordionSummary>
-            <AccordionDetails>
-              aaaaaaa
-            </AccordionDetails>
-          </Accordion>
-        </AccordionsSectionWithImage>
-        </div>
-    </section>
-   
-  );
+          <AccordionSummary expandIcon = {<CirclePlus />} id={`accordion-${index}`} className="shadow-none">
+            {accordion.title}
+          </AccordionSummary>
+          <AccordionDetails>
+            {accordion.description}
+          </AccordionDetails>
+        </Accordion>
+      ))
+    }
+    </AccordionsSectionWithImage>
+);
 }

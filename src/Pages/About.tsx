@@ -7,7 +7,9 @@ import Valores from "../assets/Icons/Valores 1.png"
 import Visao from "../assets/Icons/Visao.png"
 import { UsefulSlugIconSection } from "../components/UsefulSlugSection";
 import { AccordionsSection } from "../components/AccodionsSection";
-
+import Elevadores from "../assets/AccordionsImages/Elevadores 1.png";
+import Lixos from "../assets/AccordionsImages/Recycle-lixos 1.png";
+import Portaria from "../assets/AccordionsImages/Portaria-Acesso 1.png";
 export function About() {
   return (
     <main className="flex items-center gap-2 flex-col ">
@@ -62,8 +64,44 @@ lorem ipsum dolor sit amet"
         </>
 
       </Section>
-      <Section>
-        <AccordionsSection />
+      <Section className="flex flex-col gap-3">
+        <AccordionsSection 
+          accordionDetails={[
+          { description : "Accordion Details", title : "Accordion Title"},
+          { description : "Accordion Details", title : "Accordion Title"},
+          { description : "Accordion Details", title : "Accordion Title"},
+          { description : "Accordion Details", title : "Accordion Title"},
+          { description : "Accordion Details", title : "Accordion Title"}]}
+          img={Elevadores}
+          subTitle="Subtitle for the Accordion"
+          title="Título sobre a tecnologia"
+        />
+         <AccordionsSection 
+          accordionDetails={[
+            { description : "Accordion Details", title : "Accordion Title"},
+            { description : "Accordion Details", title : "Accordion Title"},
+            { description : "Accordion Details", title : "Accordion Title"},
+            { description : "Accordion Details", title : "Accordion Title"},
+            { description : "Accordion Details", title : "Accordion Title"}]}
+          img={Lixos}
+          subTitle="Subtitle for the Accordion"
+          title="Título sobre a tecnologia"
+          reverseImagePosition
+        />
+        <AccordionsSection 
+          accordionDetails={[
+          { description : "Accordion Details", title : "Accordion Title"},
+          { description : "Accordion Details", title : "Accordion Title"},
+          { description : "Accordion Details", title : "Accordion Title"},
+          { description : "Accordion Details", title : "Accordion Title"},
+          { description : "Accordion Details", title : "Accordion Title"}]}
+          img={Portaria}
+          subTitle="Subtitle for the Accordion"
+          title="Título sobre a tecnologia"
+        />
+        <p className="w-full">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed aut veniam dolore delectus ratione fugiat assumenda iusto eligendi expedita aspernatur corporis, numquam repellendus non, architecto eum odio ab fugit ea!
+        </p>
       </Section>
     </main>
   );
