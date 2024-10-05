@@ -12,7 +12,7 @@ export function Section ({ children, isBlue, title, description, className } : P
         <section className={`w-full px-28  py-10 my-10  text-black ${isBlue ? "bg-main " : ""}` + className} >
             {
                 title && (
-                    <h2 className="text-2xl m-auto font-bold text-black text-center pb-6">
+                    <h2 className="text-2xl m-auto font-bold text-black text-center pb-7">
                         {title}
                     </h2>
                 )
