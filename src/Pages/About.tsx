@@ -13,9 +13,7 @@ import Portaria from "../assets/AccordionsImages/Portaria-Acesso 1.png";
 export function About() {
   return (
     <main className="flex items-center gap-2 flex-col ">
-      <div className="py-1 w-full px-28">
-        <TopPageIndicator page="About"/>
-      </div>
+      <TopPageIndicator page="About"/>
       <Section
       className="flex flex-col gap-5" 
       title="Título sobre a história do CEM 

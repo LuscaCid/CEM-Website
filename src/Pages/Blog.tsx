@@ -20,9 +20,7 @@ export function Blog() {
   });
   return (
     <main className="flex items-center gap-2 flex-col ">
-      <div className="py-1 w-full px-28">
-        <TopPageIndicator page="Blog"/>
-      </div>
+      <TopPageIndicator page="Blog"/>
       {/* Secao que vai conter o componente de carrossel assim como nas outras paginas */}
       <header className="w-[50%] flex flex-col gap-4 items-center justify-center m-auto">
         <h1>

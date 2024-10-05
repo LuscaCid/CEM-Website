@@ -13,7 +13,7 @@ export function TopPageIndicator({page} : {page : Pages}){
     }
   }, [])
   return (
-    <header className="flex gap-1 w-full">
+    <header className="flex gap-1 w-full py-1 px-28">
       <img 
         src={Home}
         alt={"icone de home"}
