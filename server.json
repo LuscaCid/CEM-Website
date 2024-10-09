@@ -1,4 +1,30 @@
 {
+  "image_paths": [
+    { "path": "../assets/Enterprises/22.png" },
+    { "path": "../assets/Enterprises/Frame 41.png" },
+    { "path": "../assets/Enterprises/Frame 42 (1).png" },
+    { "path": "../assets/Enterprises/Frame 42.png" },
+    { "path": "../assets/Enterprises/Frame 43 (1).png" },
+    { "path": "../assets/Enterprises/Frame 43.png" },
+    { "path": "../assets/Enterprises/Imobiliaria.png" },
+    { "path": "../assets/Enterprises/Logo.png" },
+    { "path": "../assets/Enterprises/Lojinha da Dri.png" },
+    { "path": "../assets/Enterprises/Mistura Natural.png" },
+    { "path": "../assets/Enterprises/Salao Beleza.png" },
+    { "path": "../assets/Enterprises/Salsalito.png" },
+    { "path": "../assets/Enterprises/Taxi.png" }
+  ],
+  "top_enterprises": [
+    {"span" : "Academia de Ginástica (1)"},
+    {"span" : "Clínica de Estética (1)"},
+    {"span" : "Estacionamento (1)"},
+    {"span" : "Estética Automotiva (1)"},
+    {"span" : "Imobiliária (1)"},
+    {"span" : "Mobilidade Inteligente (1)"},
+    {"span" : "Restaurantes/Lanchonetes (5)"},
+    {"span" : "Salão de Beleza (1)"},
+    {"span" : "Táxi (1)"}
+  ],
   "blog_posts" :[
     {
       "img": "https://example.com/image1.jpg",

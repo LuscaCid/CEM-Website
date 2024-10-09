@@ -12,7 +12,7 @@ export function Button (props : ButtonProps) {
             type={props.type || "button"}
             onClick={props.onClick}
             title={props.description}
-            className="bg-main-btn hover:opacity-80 transition duration-150 rounded-md py-2 px-6 text-white font-semibold"    
+            className="bg-main-btn hover:opacity-80 transition duration-150 rounded-md py-2 px-6 text-white font-semibold w-fit"    
         >
             {props.title}
         </button>
