@@ -17,7 +17,58 @@ import mob from "../assets/Icons/Mobiliário.png";
 import cem from "../assets/Icons/Centro Convencoes.png";
 import vagas from "../assets/Icons/Vagas Estacionamento (1).png";
 import { useMemo } from "react";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import { ChevronDown } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import twotwo from "../assets/Enterprises/22.png"
+import Frame41 from "../assets/Enterprises/Frame 41.png"
+import Frame42 from "../assets/Enterprises/Frame 42 (1).png"
+import Frame42s from "../assets/Enterprises/Frame 42.png"
+import Frame43 from "../assets/Enterprises/Frame 43 (1).png"
+import Frame43s from "../assets/Enterprises/Frame 43.png"
+import Imobiliaria from "../assets/Enterprises/Imobiliaria.png"
+import Logo from "../assets/Enterprises/Logo.png"
+import Lojinha from "../assets/Enterprises/Lojinha da Dri.png"
+import Mistura from "../assets/Enterprises/Mistura Natural.png"
+import Salao from "../assets/Enterprises/Salao Beleza.png"
+import Salsalito from "../assets/Enterprises/Salsalito.png"
+import Taxi from "../assets/Enterprises/Taxi.png"
+import { api } from "../services/api";
+import { EnterprisesCard } from "../components/EnterpriseCard";
+
+const images= [
+  twotwo,
+  Frame41,
+  Frame42,
+  Frame42s,
+  Frame43,
+  Frame43s,
+  Imobiliaria,
+  Logo,
+  Lojinha,
+  Mistura,
+  Salao,
+  Salsalito,
+  Taxi,
+]
 export function StructureEvents () {
+  const { data, isFetching, isSuccess } = useQuery({
+    queryFn : async () => {
+      const response = await api.get<{span : string}[]>("top_enterprises");
+      console.log(response);
+      return response.data;
+
+    },
+    queryKey : ["top-searches"]
+  })
+  const { data : imagesPathes} = useQuery({
+    queryKey : ["images-pathes"],
+    queryFn : async () => {
+        const response = await api.get<{path : string}[]>("image_paths");
+      return response.data;
+    }
+  });
+
   return (
     <main>
       <TopPageIndicator page ="StructureEvents"/>
@@ -65,8 +116,43 @@ export function StructureEvents () {
         title="Título sobre as empresas e serviços lorem ipsum dolor sit amet"
         description="  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis sit, omnis impedit consequatur perspiciatis fugiat accusamus iure dignissimos deserunt quos. Quis nobis nam aperiam blanditiis odio voluptates magni vel deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolorem illo, ipsam possimus aut velit a doloremque quod. Totam quibusdam sequi quo porro tenetur esse aspernatur nesciunt quidem dicta ex.lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores aut eos repellendus placeat, facilis quisquam earum impedit sequi, minus dolores vitae laborum enim suscipit cumque omnis iure natus ad. Modi."
       >
-        <div>
-        
+        <div className="flex items-start mt-10">
+          <nav className="h-full w-1/4">
+            <header>
+              <Accordion  sx={{boxShadow : "none"}}>
+                <AccordionSummary
+                  sx={{
+                    borderRadius : "4px",
+                    padding : "-3px 4px; ",
+                    fontWeight : "bold",
+                    backgroundColor : "#0bc8c2"
+                  }}
+                  expandIcon={<ChevronDown />} 
+                  className="rounded-md flex items-center justify-between p-2 bg-main ">
+                  Todas as empresas 
+                </AccordionSummary>
+                <AccordionDetails sx={{boxShadow : "none"}} className="flex flex-col-reverse shadow-none gap-6">
+                  {
+                    data && data.length > 0 && (
+                      data.map((item, index) => (
+                        <div key={index} className="text-main underline underline-offset-2">
+                          <span className="cursor-pointer">{item.span}</span>
+                        </div>
+                      ))
+                    ) 
+                  }
+                </AccordionDetails>
+              </Accordion>
+            </header>
+          </nav>
+          <div className="w-[1px] mx-5 h-screen border-r-main border-r bg-main "/>
+          <aside className="flex items-start flex-wrap gap-10 ">
+            {
+              images.map((imagePath) => (
+                <EnterprisesCard key={imagePath.toString()}label="Torre/andar"  img={imagePath}  />
+              ))
+            }
+          </aside>
         </div>
       </Section>
     </main>
