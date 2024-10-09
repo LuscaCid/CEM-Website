@@ -68,7 +68,6 @@ export function StructureEvents () {
       return response.data;
     }
   });
-
   return (
     <main>
       <TopPageIndicator page ="StructureEvents"/>

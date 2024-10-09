@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "server" : "json-server server.json -p 8080",
+    "server": "json-server server.json -p 8080",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
