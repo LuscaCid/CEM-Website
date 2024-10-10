@@ -8,7 +8,7 @@ interface AccordionsSectionWithImage {
 }
 export function AccordionsSectionWithImage(props : AccordionsSectionWithImage){
   return (
-    <section className={`flex sm:flex-col items-center  gap-14 ${props.reverse ? "md:flex-row-reverse" : "md:flex-row"} px-4 py-2  `}>
+    <section className={`flex sm:flex-col items-start  gap-14 ${props.reverse ? "md:flex-row-reverse" : "md:flex-row"} px-4 py-2  `}>
       <aside className="flex flex-col gap-3 w-1/2">
       <header className="flex flex-col gap-2">
         <h1 className="text-lg font-semibold">{props.title}</h1>

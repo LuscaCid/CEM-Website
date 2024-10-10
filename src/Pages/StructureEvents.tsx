@@ -35,6 +35,7 @@ import Salsalito from "../assets/Enterprises/Salsalito.png"
 import Taxi from "../assets/Enterprises/Taxi.png"
 import { api } from "../services/api";
 import { EnterprisesCard } from "../components/EnterpriseCard";
+import { Carousel } from "../components/Carousel";
 
 const images= [
   twotwo,
@@ -71,6 +72,7 @@ export function StructureEvents () {
   return (
     <main>
       <TopPageIndicator page ="StructureEvents"/>
+      <Carousel />
       <Section 
         className="flex flex-col gap-6"
         title="Título sobre o Centro de Convenções lorem ipsum dolor sit amet" 

@@ -46,7 +46,7 @@ export function ContribuitorsSection  (){
 
 function ContribuitorsCard (props : CardProps){
   return (
-    <article className="flex flex-col gap-5 max-w-[250px]">
+    <article className="flex flex-col items-center gap-5 max-w-[250px]">
       <header className="rounded-full flex items-center justify-center p-4 bg-[#22181C] lg:h-[150px] lg:w-[150px] 2xl:h-[200px] 2xl:w-[200px]">
         <img src={props.img} alt="" />
       </header>

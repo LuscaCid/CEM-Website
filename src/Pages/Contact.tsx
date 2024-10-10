@@ -40,7 +40,7 @@ export function Contact (){
   return (
     <main className="w-full">
       <TopPageIndicator page="Contact"/>
-      <img src={Fachada} className="w-full mt-8 object-cover aspect-video max-h-[500px]" alt="" />
+      <img src={Fachada} className="w-full object-cover aspect-video max-h-[500px]" alt="" />
       <Section  description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ea tempore? Perferendis, in tempore iusto quasi, odio, laudantium suscipit dolores quidem quod iure provident aut nam quibusdam consequuntur sequi? orem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ea tempore? Perferendis, in tempore iusto quasi, odio, laudantium suscipit dolores quidem quod iure"   >
         <main className="w-full flex justify-between mt-20 gap-20">
           <aside className="bg-main py-20 px-10 h-full w-2/5 rounded-md">

@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Response } from "../@types/Responses";
 import BloodDonation from "../assets/PlacesList/image 1.png";
 import { BlogAside } from "../components/BlogAside";
+import { Carousel } from "../components/Carousel";
 export function Blog() {
   const [ page, setPage ] = useState(1);
   const { data:  response , isLoading, isSuccess } = useQuery({
@@ -21,6 +22,7 @@ export function Blog() {
   return (
     <main className="flex items-center gap-2 flex-col ">
       <TopPageIndicator page="Blog"/>
+      <Carousel />
       {/* Secao que vai conter o componente de carrossel assim como nas outras paginas */}
       <header className="w-[50%] flex flex-col gap-4 items-center justify-center m-auto">
         <h1>
